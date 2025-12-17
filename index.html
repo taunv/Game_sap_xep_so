@@ -2,40 +2,42 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thử Tài Sắp Xếp</title>
+    <title>Thử Tài Sắp Xếp Số - Phiên Bản Hoàn Thiện</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_optimized.css"> </head>
+    <link rel="stylesheet" href="style_optimized.css">
+</head>
 <body>
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="game-container">
-        <h1>🔢 Thử Tài Sắp Xếp 🔢</h1>
-        
+        <h1>🔢 Thử Tài Sắp Xếp🔢</h1>
+
+        <div id="timer-area">Thời gian: <span id="time-left">--</span>s ⏳</div>
+
         <div id="controls-area">
             <select id="sizeSelect">
-                <option value="5" selected>5 Số (Dễ)</option>
-                <option value="8">8 Số (Tr.Bình)</option>
-                <option value="12">12 Số (Khó)</option>
+                <option value="5">Dễ (15s)</option>
+                <option value="8" selected>Trung bình (20s)</option>
+                <option value="12">Khó (25s)</option>
             </select>
             <select id="orderSelect">
-                <option value="asc" selected>(Nhỏ → Lớn)</option>
-                <option value="desc">(Lớn → Nhỏ)</option>
+                <option value="asc" selected>Nhỏ → Lớn</option>
+                <option value="desc">Lớn → Nhỏ</option>
             </select>
             <button id="startButton" onclick="startGame()">BẮT ĐẦU</button>
+            <button id="muteButton" onclick="toggleMusic()">🎵 Nhạc: Tắt</button>
         </div>
-        <div id="timer-area" style="font-size: 1.5em; font-weight: bold; color: #cc0000; margin-bottom: 15px;">
-           ⏳ Thời gian còn lại: <span id="time-left">--</span>
-        </div>
-        <div id="unsorted-container" class="number-container">
-            </div>
 
-        <div id="sorted-container" class="number-container">
-            </div>
+        <div id="unsorted-container" class="number-container"></div>
+        <div id="sorted-container" class="number-container"></div>
 
-        <div id="action-area">
-            <button id="checkButton" onclick="checkResult()" disabled>XONG!</button>
-        </div>
+        <button id="checkButton" onclick="checkResult()" disabled>XONG!</button>
 
         <div id="feedback-area"></div>
     </div>
 
-    <script src="game_optimized.js"></script> </body>
+    <script src="game_optimized.js"></script>
+</body>
 </html>
